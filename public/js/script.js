@@ -80,6 +80,7 @@ document.getElementById('search').addEventListener('input', function () {
         const doc = parser.parseFromString(html, 'text/html');
         const updateTable = doc.body.innerHTML;
         document.getElementById('task-wrapper').innerHTML = updateTable;
+        document.querySelectorAll('#todo-table tr').forEach(addListeners);
     })
     .catch(error => console.error('AJAX Error:', error));
 });
